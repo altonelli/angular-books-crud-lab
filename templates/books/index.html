@@ -57,8 +57,10 @@ The title should be a link to the specific book view.
       </form>
   </div>
 
-
-<div ng-repeat="book in booksIndexCtrl.books | orderBy: 'title'">
+<div class="row" style="margin-bottom:15px;">
+<input type="text" class="form-control" ng-model="searchBook" placeholder="Search Books">
+</div>
+<div ng-repeat="book in booksIndexCtrl.books | orderBy: 'title' | filter: searchBook">
     <div class="panel panel-default">
       <div class="panel-body">
 
